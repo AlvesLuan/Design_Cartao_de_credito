@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&family=Montserrat:wght@300;500&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("bg.jpg") no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, .3);
+}
+
+.cartao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 270px;
+    background: linear-gradient(-25deg, black, #444, black);
+    border-radius: 15px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 2px 0 black;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 10px 50px -0px black;
+    animation: animacaoCartao 1s alternate infinite;
+}
+
+@keyframes animacaoCartao {
+    from { transform: translate(-20px) }
+}
+
+.cartao::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    box-shadow: 0 0 50px 10px rgba(38, 38, 38, .95) inset;
+    top: 1rem;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.cartao-top, .cartao-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartao-top svg {
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.cartao-title {
+    font-size: 1.8rem;
+    z-index: 1;
+    user-select: none;
+}
+
+.cartao-center {
+    z-index: 1;
+}
+
+.cartao-center img {
+    width: 78px;
+    padding-left: 2rem;
+    user-select: none;
+}
+
+.cartao-bottom-left, .cartao-bottom-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-bottom-left {
+    gap: .7rem;
+}
+
+.cartao-numero {
+    font-family: 'Exo', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+}
